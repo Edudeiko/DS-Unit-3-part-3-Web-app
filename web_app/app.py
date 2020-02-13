@@ -4,7 +4,6 @@ from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///web_app_331.db"
-
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
@@ -92,4 +91,10 @@ def create_user():
 #     return render_template("hello.html", message=message)
 
 
+
+# FLASK_APP=app.py flask db init #> generates app/migrations dir
+
+# run both when changing the schema:
+# FLASK_APP=app.py flask db migrate #> creates the db (with "alembic_version" table)
+# FLASK_APP=app.py flask db upgrade #> creates the "users" table
 # FLASK_APP=app.py flask run or set FLASK_APP=app.py, then only flask run
