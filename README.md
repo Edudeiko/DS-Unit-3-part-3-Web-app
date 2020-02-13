@@ -24,4 +24,4 @@ FLASK_APP=app.py flask db upgrade   #> creates the "users" table
 
 # Run the app:
 
-FLASK_APP=app.py flask run or FLASK_APP=app.py flask run or set FLASK_APP=app.py, then you can only use flask run
+FLASK_APP=app.py flask run or set FLASK_APP=app.py, then you can only use flask run
