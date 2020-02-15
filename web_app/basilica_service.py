@@ -1,3 +1,5 @@
+"""1st to make sure emdeddings works."""
+
 from dotenv import load_dotenv
 import os
 import basilica
