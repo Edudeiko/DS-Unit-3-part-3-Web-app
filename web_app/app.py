@@ -1,3 +1,4 @@
+"""4 make an adjustment to app file."""
 import os
 from dotenv import load_dotenv
 
@@ -14,9 +15,12 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL", default="OOPS")
 
+
 def create_app():
     app = Flask(__name__)
+    app.config["CUSTOM_VAR"] = 5  # just an example of app config
     app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["TWITTER_API_CLIENT"] = twitter_api_client()
 
     db.init_app(app)
@@ -28,9 +32,8 @@ def create_app():
     return app
 
 
-
 # AAAH I ACTUALLY THINK THE API CLIENT DOESN'T
-# YET MAKE ANY REQUESTS! 
+# YET MAKE ANY REQUESTS!
 # SO THAT LAST STEP MIGHT HAVE BEEN UNNECESSARY!
 
 

@@ -3,7 +3,7 @@
 from dotenv import load_dotenv
 import os
 import basilica
-from scipy import spatial
+# from scipy import spatial
 
 load_dotenv()
 
@@ -11,20 +11,33 @@ load_dotenv()
 
 BASILICA_API_KEY = os.getenv("BASILICA_API_KEY", default="OOPS")
 
-sentences = [
-    "This is a sentence",
-    "This is a similar sentence",
-    "I don't think this sentence is very similar at all..."
-]
-with basilica.Connection('5b537344-60f8-fc07-1981-05f54ea445b4') as c:
-    embeddings = list(c.embed_sentences((sentences)))
 
-print(list(embeddings))
+def basilica_connection():
+    connection = basilica.Connection(BASILICA_API_KEY)
+    print(connection)
+    return connection
 
-print(spatial.distance.cosine(embeddings[0], embeddings[1]))
-print(spatial.distance.cosine(embeddings[0], embeddings[2]))
 
-for emb in embeddings:
-    print(type(emb))
-    print(emb)
-    print("---------------")
+if __name__ == "__main__":
+    sentences = [
+        "This is a sentence",
+        "This is a similar sentence",
+        "I don't think this sentence is very similar at all..."
+        ]
+# print(spatial.distance.cosine(embeddings[0], embeddings[1]))
+# print(spatial.distance.cosine(embeddings[0], embeddings[2]))
+
+    connection = basilica_connection()
+
+    embeddings = list(connection.embed_sentences(sentences))
+
+    for emb in embeddings:
+        print(type(emb))  # > list
+        print(len(emb))  # > 768
+        print(emb)
+        print("---------------")
+
+    result = connection.embed_sentence("Hello World", model="twitter")
+    print(type(result))  # > list
+    print(len(result))  # > 768
+    print(result)
