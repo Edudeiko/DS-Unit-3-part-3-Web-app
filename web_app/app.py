@@ -93,3 +93,18 @@ def create_app():
 # FLASK_APP=app.py flask db upgrade #> creates the "users" table
 # FLASK_APP=app.py flask run or set FLASK_APP=app.py, then only flask run
 # FLASK_APP=web_app.py flask run
+# git push heroku master
+# heroku run bash then exit
+# heroku config
+# heroku config:set BASILICA_API_KEY="_____"
+# heroku config:set TWITTER_API_KEY="_____"
+# heroku config:set TWITTER_API_SECRET="______"
+# heroku config:set TWITTER_ACCESS_TOKEN="______"
+# heroku config:set TWITTER_ACCESS_TOKEN_SECRET="_____"
+# heroku addons:create heroku-postgresql:hobby-dev
+# DATABASE_URL="postgres://USERNAME:PASSWORD@HOST:5432/DB_NAME"
+# FLASK_APP=web_app flask db init # may see Error: Directory migrations already exists and is not empty and its ok
+# FLASK_APP=web_app flask db stamp head # if you see an error about Target database is not up to date
+# FLASK_APP=web_app flask db migrate
+# FLASK_APP=web_app flask db upgrade 
+

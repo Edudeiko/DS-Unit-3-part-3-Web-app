@@ -27,4 +27,3 @@ class Tweet(db.Model):
 
     # def __repr__(self):
     #     return '<Tweet {}>'.format(self.full_text)
-
