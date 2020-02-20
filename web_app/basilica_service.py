@@ -3,7 +3,7 @@
 from dotenv import load_dotenv
 import os
 import basilica
-# from scipy import spatial
+from scipy import spatial
 
 load_dotenv()
 
@@ -24,8 +24,6 @@ if __name__ == "__main__":
         "This is a similar sentence",
         "I don't think this sentence is very similar at all..."
         ]
-# print(spatial.distance.cosine(embeddings[0], embeddings[1]))
-# print(spatial.distance.cosine(embeddings[0], embeddings[2]))
 
     connection = basilica_connection()
 
@@ -41,3 +39,6 @@ if __name__ == "__main__":
     print(type(result))  # > list
     print(len(result))  # > 768
     print(result)
+
+    print(spatial.distance.cosine(embeddings[0], embeddings[1]))
+    print(spatial.distance.cosine(embeddings[0], embeddings[2]))
