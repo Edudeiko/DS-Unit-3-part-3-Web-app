@@ -107,4 +107,3 @@ def create_app():
 # FLASK_APP=web_app flask db stamp head # if you see an error about Target database is not up to date
 # FLASK_APP=web_app flask db migrate
 # FLASK_APP=web_app flask db upgrade 
-
