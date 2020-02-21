@@ -1,7 +1,8 @@
 # DS-Unit-3-part-3-Web-app
+
 web_app deployment
 
-# Setup
+## Setup
 
 Setup virtual environment:
 
@@ -11,26 +12,25 @@ pipenv install Flask Flask-SQLAlchemy Flask-Migrate
 
 pipenv shell
 
-# Setup database:
+## Setup database
 
 cd web_app
 
 FLASK_APP=app.py flask db init #> generates app/migrations dir
 
-# run both when changing the schema:
+## run both when changing the schema
 
 FLASK_APP=app.py flask db migrate #> creates the db (with "alembic_version" table)
 
 FLASK_APP=app.py flask db upgrade #> creates the "users" table
 
-# Run the app:
+## Run the app
 
 FLASK_APP=app.py flask run or set FLASK_APP=app.py, then you can only use flask run
 
+## Heroku
 
-# Heroku
-
-#> make sure to pip install all the Necessary libraries, then create pipenv. pipenv will create Pipfile.lock with all your collected libraries. Install gunicorn before creating Pipfile.lock
+> make sure to pip install all the Necessary libraries, then create pipenv. pipenv will create Pipfile.lock with all your collected libraries. Install gunicorn before creating Pipfile.lock
 
 heroku login
 
@@ -48,7 +48,7 @@ git remote -v
 
 git push heroku master
 
-# Debug mode
+## Debug mode
 
 heroku run bash
 
@@ -72,17 +72,17 @@ heroku config #> to check on the changes
 
 heroku logs
 
-#> Could not parse rfc1738 URL from string 'OOPS'
+> Could not parse rfc1738 URL from string 'OOPS'
 
 heroku addons:create heroku-postgresql:hobby-dev #> create DATABASE_URL in heroku
 
 heroku config #> Check on changes
 
-# insert parameters in to TablePlus 
+## insert parameters in to TablePlus
 
-#> username, password, host/socket, database
+> username, password, host/socket, database
 
-# Heroku run bash
+## Heroku run bash
 
 heroku run bash
 
