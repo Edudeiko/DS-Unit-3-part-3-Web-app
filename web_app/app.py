@@ -106,4 +106,4 @@ def create_app():
 # FLASK_APP=web_app flask db init # may see Error: Directory migrations already exists and is not empty and its ok
 # FLASK_APP=web_app flask db stamp head # if you see an error about Target database is not up to date
 # FLASK_APP=web_app flask db migrate
-# FLASK_APP=web_app flask db upgrade 
+# FLASK_APP=web_app flask db upgrade
