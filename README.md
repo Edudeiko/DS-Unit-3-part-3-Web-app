@@ -76,11 +76,11 @@ heroku logs
 
 heroku addons:create heroku-postgresql:hobby-dev #> create DATABASE_URL in heroku
 
-heroku config #> Check on changies
+heroku config #> Check on changes
 
 # insert parameters in to TablePlus 
 
-#username, password, host/socket, database
+#> username, password, host/socket, database
 
 
 FLASK_APP=web_app flask db init #>may see Error: Directory migrations already exists and is not empty and its ok
@@ -90,3 +90,7 @@ FLASK_APP=web_app flask db stamp head #> if you see an error about Target databa
 FLASK_APP=web_app flask db migrate
 
 FLASK_APP=web_app flask db upgrade
+
+heroku run bash
+
+(FLASK_APP=DS-Unit-3-part-3-Web-app flask db init)
