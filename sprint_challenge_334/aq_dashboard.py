@@ -17,7 +17,7 @@ class Record(DB.Model):
     value = DB.Column(DB.Float, nullable=False)
     
     def __repr__(self):
-        return f'<Date_UTC: {self.datetime}, concentration of carbon dioxide PPM: {self.value},'
+        return f'Date_UTC: {self.datetime}, concentration of carbon dioxide PPM: {self.value},'
 
 
 @APP.route('/')
