@@ -42,7 +42,7 @@ pwd # > check the directory first
 
 git remote -v
 
-heroku create #> name of your app or 'heroku create' heroku will assign a random name to your app
+heroku create < name of your app > or 'heroku create' heroku will assign a random name to your app
 
 git remote -v
 

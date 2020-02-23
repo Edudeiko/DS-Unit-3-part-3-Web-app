@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0ccd6c18b9cbc2f4b7a52af4fce9d6632c42044cd583d2826eb7b64c58f874ae"
+            "sha256": "cc8d6ec5b693068040e3a9a6ae3dfd5fb5d2de36fd69eafef4587968817edc8c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -251,6 +251,13 @@
             ],
             "index": "pypi",
             "version": "==2.8.4"
+        },
+        "py-openaq": {
+            "hashes": [
+                "sha256:18c50b95ea56e5e7d352a29550ce913dddf6ec739c93dda6f01cfbd6519d2b03"
+            ],
+            "index": "pypi",
+            "version": "==1.1.0"
         },
         "pysocks": {
             "hashes": [

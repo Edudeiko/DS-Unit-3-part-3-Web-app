@@ -16,6 +16,7 @@ basilica = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
 sklearn = "*"
+py-openaq = "*"
 
 [requires]
 python_version = "3.7"
