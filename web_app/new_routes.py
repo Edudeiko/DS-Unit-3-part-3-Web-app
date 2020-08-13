@@ -6,7 +6,6 @@ import numpy as np
 from web_app.models import User, Tweet, db
 from web_app.twitter_service import twitter_api_client
 from web_app.basilica_service import basilica_connection
-# from web_app.classifier import load_model
 
 new_routes = Blueprint("new_routes", __name__)
 
