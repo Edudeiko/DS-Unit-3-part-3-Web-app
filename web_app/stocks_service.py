@@ -13,5 +13,3 @@ parsed_response = json.loads(response.text)
 
 print(type(parsed_response))  # > dict
 print(parsed_response.keys())
-
-# TODO: work with the parsed response

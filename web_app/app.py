@@ -6,10 +6,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-from web_app.models import db, migrate  # User, Tweet
-# from web_app.routes import my_routes
+from web_app.models import db, migrate
 from web_app.new_routes import new_routes
-# from web_app.twitter_service import twitter_api_client
 
 load_dotenv()
 
@@ -27,64 +25,11 @@ def create_app():
     migrate.init_app(app, db)
 
     app.register_blueprint(new_routes)
-    # app.register_blueprint(more_routes)
 
     return app
 
-# def create_app():
-#     app = Flask(__name__)
-# #     # app.config["CUSTOM_VAR"] = 5  # just an example of app config
-#     app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
-#     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-# #     # app.config["TWITTER_API_CLIENT"] = twitter_api_client()
-
-#     DB.init_app(app)
-#     # migrate.init_app(app, db)
-
-#     # app.register_blueprint(my_routes)
-#     # app.register_blueprint(more_routes)
-#     # app.register_blueprint(new_routes)
-#     @app.route('/')
-#     def root():
-#         users = User.query.all()
-#         return render_template('base.html', title = 'Home', users=users)
-
-#     @app.route('/reset')
-#     def reset():
-#         DB.drop_all()
-#         DB.create_all()
-#         return render_template('base.html', title='Reset', users=[])
-
-#     @app.route('/user', methods=['POST'])
-#     @app.route('/user/<name>', methods=['GET'])
-#     def user(name=None, message=''):
-#         name = name or request.values['user_name']
-#         try:
-#             if request.method == 'POST':
-#                 add_or_update_user(name)
-#                 message = "User {} successfully added".format(name)
-#             tweets = User.query.filter(User.name == name).one().tweets
-#         except Exception as e:
-#             message = "Error adding {}: {}".format(name, e)
-#             tweets = []
-#         return render_template('user.html', title=name, tweets=tweets,
-#         message=message)
-
-#     @app.route('/compare', methods=['POST'])
-#     def compare(message=''):
-#         user1, user2 = sorted([request.values['user1'],
-#                                request.values['user2']])
-#         if user1 == user2:
-#             message = 'Cannot compare a user to themselves!'
-#         else:
-#             prediction = predict_user(user1, user2, request.values['tweet_text'])
-#             message = '"{}" is more likely to be said by {} than {}'.format(
-#             request.values['tweet_text'], user1 if prediction else user2,
-#             user2 if prediction else user1
-#             )
-#         return render_template('prediction.html', title='Prediction', message=message)
-#     return app
-
+'''
+for record
 
 # FLASK_APP=app.py flask db init #> generates app/migrations dir
 
@@ -107,3 +52,4 @@ def create_app():
 # FLASK_APP=web_app flask db stamp head # if you see an error about Target database is not up to date
 # FLASK_APP=web_app flask db migrate
 # FLASK_APP=web_app flask db upgrade
+'''
